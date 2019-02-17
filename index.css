@@ -1,0 +1,380 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    color: #3D445E;
+}
+
+p, form, ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    color: #30447a;
+    text-decoration: none;
+}
+
+input, textarea {
+    font-size: 100%;
+    font-family: inherit;
+}
+
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 13.33px Arial;
+}
+
+#headerimg {
+    background-color: #91d1bf;
+    padding: 10px 0;
+    width: 100%;
+    height: 51px;
+    overflow: hidden;
+    zoom: 1;
+}
+
+#headerimg .page_logo {
+    display: block;
+    max-height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#daohanglan {
+    background-color: #91d1bf;
+    border-top: 3px solid #4eb4b0;
+    border-bottom: 2px solid #69b4af;
+    overflow: hidden;
+}
+
+.menu_tab {
+    display: block;
+    margin-left: 6%;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+}
+
+.menu_tab li {
+    height: 48px;
+    line-height: 1.2;
+    margin-right: 5px;
+    padding: 0 16px;
+    float: left;
+    text-align: center;
+    text-shadow: 1px 1px #e3e3e3;
+}
+
+.menu_tab .on {
+    background: white;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15);
+    background: linear-gradient(to bottom, #4bb7d0, #fff 6px);
+}
+
+.menu_tab .on a {
+    color: #3D445E;
+}
+
+@media (max-width: 640px) {
+    .menu_tab > li {
+        width: 33%;
+        height: 36px;
+        line-height: 24px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 1024px) {
+    .menu_tab li {
+        padding: 0 6px;
+    }
+}
+
+.menu_tab li a {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 7px;
+    margin-left: 2px;
+    margin-bottom: 0;
+    margin-right: 2px;
+    text-shadow: 1px 1px #eee;
+}
+
+#searchform {
+    position: absolute;
+    padding: 8px 0 0;
+    right: 6px;
+    white-space: nowrap;
+    float: right;
+}
+
+@media (max-width: 640px) {
+    #searchform {
+        top: 4px;
+        right: 10px;
+        display: none;
+        width: calc(100% - 180px);
+        text-align: right;
+        padding-top: 3px;
+    }
+}
+
+input#s {
+    width: 250px;
+    width: 25vw;
+    height: 34px;
+    padding: 8px 6px;
+    border: 1px solid #86A0D6;
+    border-radius: 2px;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+    input#s {
+        width: calc(100vw - 680px);
+    }
+}
+
+@media (max-width: 640px) {
+    #searchform #s {
+        width: -webkit-calc(100% - 55px);
+        width: calc(100% - 55px);
+        border: 1px solid #86A0D6;
+        font-size: 16px;
+    }
+}
+
+#searchsubmit {
+    width: 50px;
+    height: 34px;
+    padding: 8px 10px;
+    border: 1px solid #86A0D6;
+    background: #f8f8f8;
+    border-radius: 2px;
+    color: #555;
+    font-size: 12px;
+    cursor: pointer;
+    overflow: visible;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 5px;
+}
+
+#content {
+    font-size: 14px;
+    padding-bottom: 20px;
+    min-height: 2000px;
+    padding-top: 1px;
+    background-color: #fff;
+}
+
+@media (max-width: 640px) {
+    #content {
+        min-height: 200px;
+        margin-right: 0;
+        border-right: 0;
+    }
+}
+
+.narrowcolumn {
+    margin-right: 360px;
+    padding-left: 13px;
+    padding-right: 15px;
+}
+
+.narrowcolumn:before {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.navigation_top {
+    padding-top: 20px;
+    margin-bottom: -30px;
+}
+
+@media (max-width: 1280px) {
+    .navigation_top {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .navigation_top {
+        margin-bottom: auto;
+    }
+}
+
+.wp-pagenavi span.pages {
+    padding: 2px 6px;
+    margin: 2px 2px 2px 2px;
+    color: #666;
+    border: 1px solid #4eb4b0;
+    background-color: #fff;
+    cursor: default;
+}
+
+.narrowcolumn:before {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.wp-pagenavi a, .wp-pagenavi span {
+    display: inline-block;
+}
+
+.wp-pagenavi span.current {
+    padding: 2px 6px;
+    margin: 2px;
+    font-weight: bold;
+    border: 1px solid #4eb4b0;
+    color: #fff;
+    background-color: #91d1bf;
+}
+
+.wp-pagenavi a:visited {
+    padding: 2px 6px;
+    margin: 2px;
+    text-decoration: none;
+    border: 1px solid #4eb4b0;
+    color: #34538b;
+    background-color: #fff;
+}
+
+.wp-pagenavi a, .wp-pagenavi a:link {
+    padding: 2px 6px;
+    margin: 2px;
+    text-decoration: none;
+    border: 1px solid #4eb4b0;
+    color: #34538b;
+    background-color: #fff;
+}
+
+.wp-pagenavi a, .wp-pagenavi span {
+    display: inline-block;
+}
+
+.wp-pagenavi a:hover {
+    border: 1px solid #333;
+    color: #333;
+    background-color: #fff;
+}
+
+.wp-pagenavi span.extend {
+    padding: 2px 6px;
+    margin: 2px;
+    border: 1px solid #666;
+    color: #666;
+    background-color: #fff;
+}
+
+.wp-pagenavi a, .wp-pagenavi span {
+    display: inline-block;
+}
+
+.post {
+    margin-left: 6vw;
+    margin-right: auto;
+    width: 728px;
+    max-width: 100%;
+    font-size: medium;
+}
+
+.post {
+    margin: 0 0 40px;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+@media (max-width: 640px) {
+    .post {
+        text-align: left;
+        word-break: break-all;
+    }
+}
+
+@media (max-width: 1280px) {
+    .post {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    #content h2 {
+        line-height: 1.25;
+        margin-bottom: 5px;
+        font-size: 2em !important;
+        margin-top: 25px;
+    }
+}
+
+#content h2, .entry h3, h3[id^='post'] > a {
+    font-family: x-locale-heading-primary, zillaslab, Palatino, "Palatino Linotype", x-locale-heading-secondary, 'Source Han Serif SC', STZhongsong, "Source Han Sans CN", 'PingFang SC', 'Myriad Pro', 'Hiragino Sans GB', SimHei;
+}
+
+#content h2 {
+    margin: 40px auto 10px;
+    font-size: 2.5em;
+    line-height: 1.25;
+    text-align: left;
+}
+
+element.style {
+}
+
+h2 {
+    font-size: 2em;
+}
+
+#content h2 {
+    margin: 40px auto 10px;
+    font-size: 2.5em;
+    line-height: 1.25;
+    text-align: left;
+}
+
+@media (max-width: 640px) {
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 640px) {
+    #content h2 {
+        line-height: 1.25;
+        margin-bottom: 5px;
+        font-size: 2em !important;
+        margin-top: 25px;
+    }
+}
+
+h2 a:visited {
+    color: #34538b;
+}
+
+h2 > a {
+    font-size: 24px;
+}
+small{
+    color:#777;
+    font-size: 75%;
+    line-height: 1.5;
+}
+
