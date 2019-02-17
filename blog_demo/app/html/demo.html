@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="zh-CN">
+<head profile="http://gmpg.org/xfn/11">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="张鑫旭的个人博客_web前端技术文章_写给自己看的CSS shapes布局教程"/>
+    <meta name="keywords" content="web前端, HTML5, CSS3, html, CSS, jQuery, JS, JavaScript, SVG, canvas"/>
+    <meta name="author" content="张鑫旭,zhangxinxu"/>
+    <title> 张鑫旭-鑫空间-鑫生活</title>
+    <link rel="stylesheet" href="/wordpress/wp-content/themes/default/style.css?v190112">
+    <link rel="pingback" href="https://www.zhangxinxu.com/wordpress/xmlrpc.php"/>
+    <link rel='dns-prefetch' href='//s.w.org'/>
+    <link rel="alternate" type="application/rss+xml" title="张鑫旭-鑫空间-鑫生活 &raquo; Feed"
+          href="https://www.zhangxinxu.com/wordpress/feed/"/>
+    <link rel="alternate" type="application/rss+xml" title="张鑫旭-鑫空间-鑫生活 &raquo; 评论Feed"
+          href="https://www.zhangxinxu.com/wordpress/comments/feed/"/>
+    <script type="text/javascript">
+        window._wpemojiSettings = {
+            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/",
+            "svgExt": ".svg",
+            "source": {"concatemoji": "https:\/\/www.zhangxinxu.com\/wordpress\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.4"}
+        };
+        !function (a, b, c) {
+            function d(a, b) {
+                var c = String.fromCharCode;
+                l.clearRect(0, 0, k.width, k.height), l.fillText(c.apply(this, a), 0, 0);
+                var d = k.toDataURL();
+                l.clearRect(0, 0, k.width, k.height), l.fillText(c.apply(this, b), 0, 0);
+                var e = k.toDataURL();
+                return d === e
+            }
+
+            function e(a) {
+                var b;
+                if (!l || !l.fillText) return !1;
+                switch (l.textBaseline = "top", l.font = "600 32px Arial", a) {
+                    case"flag":
+                        return !(b = d([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819])) && (b = d([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]), !b);
+                    case"emoji":
+                        return b = d([55357, 56692, 8205, 9792, 65039], [55357, 56692, 8203, 9792, 65039]), !b
+                }
+                return !1
+            }
+
+            function f(a) {
+                var c = b.createElement("script");
+                c.src = a, c.defer = c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c)
+            }
+
+            var g, h, i, j, k = b.createElement("canvas"), l = k.getContext && k.getContext("2d");
+            for (j = Array("flag", "emoji"), c.supports = {
+                everything: !0,
+                everythingExceptFlag: !0
+            }, i = 0; i < j.length; i++) c.supports[j[i]] = e(j[i]), c.supports.everything = c.supports.everything && c.supports[j[i]], "flag" !== j[i] && (c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && c.supports[j[i]]);
+            c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && !c.supports.flag, c.DOMReady = !1, c.readyCallback = function () {
+                c.DOMReady = !0
+            }, c.supports.everything || (h = function () {
+                c.readyCallback()
+            }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", h, !1), a.addEventListener("load", h, !1)) : (a.attachEvent("onload", h), b.attachEvent("onreadystatechange", function () {
+                "complete" === b.readyState && c.readyCallback()
+            })), g = c.source || {}, g.concatemoji ? f(g.concatemoji) : g.wpemoji && g.twemoji && (f(g.twemoji), f(g.wpemoji)))
+        }(window, document, window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='https://api.w.org/' href='https://www.zhangxinxu.com/wordpress/wp-json/'/>
+    <link rel="EditURI" type="application/rsd+xml" title="RSD"
+          href="https://www.zhangxinxu.com/wordpress/xmlrpc.php?rsd"/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
+          href="https://www.zhangxinxu.com/wordpress/wp-includes/wlwmanifest.xml"/>
+    <meta name="generator" content="WordPress 4.9.4"/>
+</head>
+<body class="home blog">
+<div id="page">
+    <div id="header" role="banner">
+        <div id="headerimg">
+            <a href="/" class="page_logo">张鑫旭-鑫空间-鑫生活</a>
+            <a href="#searchform" id="iconSearch" class="icon-search"></a>
+            <div class="description">it&#039;s my whole life!</div>
+        </div>
+        <div id="menubar">
+            <ul class="menu_tab">
+                <li class="">
+                    <a href="/" class="boss">网站首页</a>
+                    <a href="/php/microCode">我的微码</a>
+                    <a href="/php/advise">建议反馈</a>
+                </li>
+                <li class="on">
+                    <a class="boss" href="/wordpress/">前端技术</a>
+                    <a href="/wordpress/?cat=3">CSS</a>
+                    <a href="/wordpress/?cat=5">JavaScript</a>
+                    <a href="/wordpress/category/html/">HTML</a>
+                </li>
+                <li class="">
+                    <a class="boss" href="/life/">生活与创作</a>
+                    <a href="/life/?cat=3">生活</a>
+                    <a href="/life/?cat=5">散文</a>
+                    <a href="/life/?cat=4">小说</a>
+                </li>
+                <li class="">
+                    <span class="boss">前端在线资源</span>
+                    <a href="/jq/api14/">jQuery1.4</a>
+                    <a href="//www.canvasapi.cn/" target="_blank">Canvas中文API</a>
+                </li>
+            </ul>
+            <form method="get" id="searchform" action="https://www.zhangxinxu.com/wordpress/">
+                <label class="hidden" for="s">Search for:</label>
+                <div>
+                    <input type="search" placeholder="翻页太辛苦？试试直接搜索" value="" name="s" id="s">
+                    <input type="submit" id="searchsubmit" data-value="Search" value="搜索">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        var isSlideHide = false;
+        if (window.localStorage) {
+            var slideHideTime = +localStorage.slideHideTime;
+            var slideNowTime = +new Date();
+            if (screen.width < 1600 && slideNowTime - slideHideTime < 1000 * 60 * 30) {
+                // 不足半小时
+                isSlideHide = true;
+                document.getElementById("page").className = "slide_hide";
+            } else if (slideHideTime > slideNowTime) {
+                localStorage.removeItem('slideHideTime');
+            }
+        }
+    </script>
+    <div class="the_main">
+        <div id="content" class="narrowcolumn" role="main">
+            <div class="shink_rel"><a href="javascript:" id="shinkSlide" class="shink_a" title="收起右边栏">&#x25ba;</a>
+            </div>
+            <script>if (window.localStorage && window.isSlideHide) {
+                (function () {
+                    var eleShink = document.getElementById("shinkSlide");
+                    eleShink.title = "展开右边栏";
+                    // 左箭头
+                    eleShink.innerHTML = "&#x25c4;";
+                })();
+            }</script>
+            <div class="navigation_top">
+                <div class='wp-pagenavi'>
+                    <span class='pages'> 第1到63页</span><span class='current'>1</span><a
+                        href='https://www.zhangxinxu.com/wordpress/page/2/' class='page'>2</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/3/' class='page'>3</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/4/' class='page'>4</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/5/' class='page'>5</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/6/' class='page'>6</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/7/' class='page'>7</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/8/' class='page'>8</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/9/' class='page'>9</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/10/' class='page'>10</a><a
+                        href="https://www.zhangxinxu.com/wordpress/page/2/" class="nextpostslink"> 下一页 </a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/20/' class='larger page'>20</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/30/' class='larger page'>30</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/40/' class='larger page'>40</a><span
+                        class='extend'>...</span><a href='https://www.zhangxinxu.com/wordpress/page/63/' class='last'>最后一页
+                    »</a>
+                </div>
+            </div>
+
+
+            <div class="post-8453 post type-post status-publish format-standard hentry category-css tag-background tag-css-shapes tag-css3 tag-css tag-mask tag-shape-image-threshold tag-shape-margin tag-shape-outside tag-231 tag-189"
+                 id="post-8453">
+                <h2><a href="https://www.zhangxinxu.com/wordpress/2019/02/css-css3-shapes/" rel="bookmark"
+                       class="entry-title" title="写给自己看的CSS shapes布局教程的永久链接">写给自己看的CSS shapes布局教程</a></h2>
+                <small><span class="date updated" role="update">2019年02月2日</span> by <span class="author fn"
+                                                                                           role="author">张 鑫旭</span> 阅读
+                    1517 次, 今日 61 次
+                </small>
+
+                <div class="entry entry-content" role="summary">
+                    <p><img src="//image.zhangxinxu.com/image/blog/201902/css-shapes-cover.png" width="161" height="111"
+                            alt="CSS Shapes布局" lazyload="on" class="alignright size-medium"/></p>
+                    <p>本文详细介绍CSS
+                        Shapes布局，兼容性不错，移动端项目和中后台项目都可以使用，可以实现很多很棒的布局效果，需要和浮动配合使用。不仅支持基础图形，还支持PNG，SVG图像，以及渐变图形的环绕效果。是非常值得学习的一种布局方式。</p>
+                    <p class="read_more"><a href="https://www.zhangxinxu.com/wordpress/2019/02/css-css3-shapes/"
+                                            title="写给自己看的CSS shapes布局教程"><strong>阅读全文…</strong></a></p>
+                </div>
+
+                <p class="postmetadata">标签： <a href="https://www.zhangxinxu.com/wordpress/tag/background/" rel="tag">background</a>,
+                    <a href="https://www.zhangxinxu.com/wordpress/tag/css-shapes/" rel="tag">CSS Shapes</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/css3/" rel="tag">css3</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/css/" rel="tag">css相关</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/mask/" rel="tag">mask</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/shape-image-threshold/" rel="tag">shape-image-threshold</a>,
+                    <a href="https://www.zhangxinxu.com/wordpress/tag/shape-margin/" rel="tag">shape-margin</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/shape-outside/" rel="tag">shape-outside</a>,
+                    <a href="https://www.zhangxinxu.com/wordpress/tag/%e5%b8%83%e5%b1%80/" rel="tag">布局</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/%e6%b8%90%e5%8f%98/"
+                            rel="tag">渐变</a><br/><br/> 发布在 <a href="https://www.zhangxinxu.com/wordpress/category/css/"
+                                                              rel="category tag">CSS相关</a> | <a
+                            href="https://www.zhangxinxu.com/wordpress/2019/02/css-css3-shapes/#comments">一条评论
+                        &#187;</a></p>
+            </div>
+
+
+            <div class="post-8436 post type-post status-publish format-standard hentry category-css tag-break-inside tag-column-gap tag-columns tag-css3 tag-css tag-231"
+                 id="post-8436">
+                <h2><a href="https://www.zhangxinxu.com/wordpress/2019/01/css-css3-columns-layout/" rel="bookmark"
+                       class="entry-title" title="写给自己看的CSS columns分栏布局教程的永久链接">写给自己看的CSS columns分栏布局教程</a></h2>
+                <small><span class="date updated" role="update">2019年01月31日</span> by <span class="author fn"
+                                                                                            role="author">张 鑫旭</span> 阅读
+                    1457 次, 今日 16 次
+                </small>
+
+                <div class="entry entry-content" role="summary">
+                    <p><img src="//image.zhangxinxu.com/image/blog/201810/flex-thumb.jpg" width="161" height="100"
+                            class="alignright size-medium" alt="columns布局"></p>
+                    <p>本文详细介绍了CSS columns分栏布局的各个CSS属性的语法以及一些细节，所有效果都可以实时体验，同时还介绍了一些间接相关的CSS属性，例如break-inside等。</p>
+                    <p class="read_more"><a href="https://www.zhangxinxu.com/wordpress/2019/01/css-css3-columns-layout/"
+                                            title="写给自己看的CSS columns分栏布局教程"><strong>阅读全文…</strong></a></p>
+                </div>
+
+                <p class="postmetadata">标签： <a href="https://www.zhangxinxu.com/wordpress/tag/break-inside/" rel="tag">break-inside</a>,
+                    <a href="https://www.zhangxinxu.com/wordpress/tag/column-gap/" rel="tag">column-gap</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/columns/" rel="tag">columns</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/css3/" rel="tag">css3</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/css/" rel="tag">css相关</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/%e5%b8%83%e5%b1%80/"
+                            rel="tag">布局</a><br/><br/> 发布在 <a href="https://www.zhangxinxu.com/wordpress/category/css/"
+                                                              rel="category tag">CSS相关</a> | <a
+                            href="https://www.zhangxinxu.com/wordpress/2019/01/css-css3-columns-layout/#comments">一条评论
+                        &#187;</a></p>
+            </div>
+
+
+            <div class="post-8425 post type-post status-publish format-standard hentry category-js-api tag-clientheight tag-dom tag-dommousescroll tag-getboundingclientrect tag-innerheight tag-offsetheight tag-pageyoffset tag-scrollheight tag-scrolltop tag-window tag-1400"
+                 id="post-8425">
+                <h2><a href="https://www.zhangxinxu.com/wordpress/2019/01/dom-quiz-27-window-scroll/" rel="bookmark"
+                       class="entry-title" title="DOM基础小测27期答疑文字版-窗体滚动二三事的永久链接">DOM基础小测27期答疑文字版-窗体滚动二三事</a></h2>
+                <small><span class="date updated" role="update">2019年01月26日</span> by <span class="author fn"
+                                                                                            role="author">张 鑫旭</span> 阅读
+                    1749 次, 今日 11 次
+                </small>
+
+                <div class="entry entry-content" role="summary">
+                    <p><img src="//image.zhangxinxu.com/image/blog/201901/quiz-thumb.jpg" width="161" height="100"
+                            alt="小测头图" lazyload="on" class="alignright size-medium"></p>
+                    <p>本次小测借一个简单案例跟大家讲讲CSSOM视图模式（CSSOM View Module）相关的一些API及其特性，适用场景等，总结出一些最佳实践，明确一些技术细节，让技术更加精纯。</p>
+                    <p class="read_more"><a
+                            href="https://www.zhangxinxu.com/wordpress/2019/01/dom-quiz-27-window-scroll/"
+                            title="DOM基础小测27期答疑文字版-窗体滚动二三事"><strong>阅读全文…</strong></a></p>
+                </div>
+
+                <p class="postmetadata">标签： <a href="https://www.zhangxinxu.com/wordpress/tag/clientheight/" rel="tag">clientHeight</a>,
+                    <a href="https://www.zhangxinxu.com/wordpress/tag/dom/" rel="tag">dom</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/dommousescroll/" rel="tag">DOMMouseScroll</a>,
+                    <a href="https://www.zhangxinxu.com/wordpress/tag/getboundingclientrect/" rel="tag">getBoundingClientRect</a>,
+                    <a href="https://www.zhangxinxu.com/wordpress/tag/innerheight/" rel="tag">innerHeight</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/offsetheight/" rel="tag">offsetHeight</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/pageyoffset/" rel="tag">pageYoffset</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/scrollheight/" rel="tag">scrollHeight</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/scrolltop/" rel="tag">scrollTop</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/window/" rel="tag">window</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/%e5%b0%8f%e6%b5%8b/"
+                            rel="tag">小测</a><br/><br/> 发布在 <a
+                            href="https://www.zhangxinxu.com/wordpress/category/js/js-api/" rel="category tag">JS
+                        API</a> | <a
+                            href="https://www.zhangxinxu.com/wordpress/2019/01/dom-quiz-27-window-scroll/#comments">3
+                        条评论 &#187;</a></p>
+            </div>
+
+
+            <div class="post-8417 post type-post status-publish format-standard hentry category-css tag-calc tag-counter tag-css3 tag-css tag-progress tag-var tag-503 tag-1009"
+                 id="post-8417">
+                <h2>
+                    <a href="https://www.zhangxinxu.com/wordpress/2019/01/css-var-%e5%8f%98%e9%87%8f-%e5%b1%80%e9%83%a8/"
+                       rel="bookmark" class="entry-title" title="CSS var变量的局部作用域（继承）特性的永久链接">CSS var变量的局部作用域（继承）特性</a>
+                </h2>
+                <small><span class="date updated" role="update">2019年01月26日</span> by <span class="author fn"
+                                                                                            role="author">张 鑫旭</span> 阅读
+                    1224 次, 今日 7 次
+                </small>
+
+                <div class="entry entry-content" role="summary">
+                    <p><img src="//image.zhangxinxu.com/image/blog/201811/css-var-cover2.jpg" width="161" height="100"
+                            lazyload="on" class="alignright" alt="CSS变量缩略图"></p>
+                    <p>最近做项目，发现CSS变量一个有意思的特性，那就是变量作用域非全局，于是，我们可以放心大胆使用CSS变量给伪元素传参了。这样，以前一些很啰嗦的实现现在就可以变得非常简洁。</p>
+                    <p class="read_more"><a
+                            href="https://www.zhangxinxu.com/wordpress/2019/01/css-var-%e5%8f%98%e9%87%8f-%e5%b1%80%e9%83%a8/"
+                            title="CSS var变量的局部作用域（继承）特性"><strong>阅读全文…</strong></a></p>
+                </div>
+
+                <p class="postmetadata">标签： <a href="https://www.zhangxinxu.com/wordpress/tag/calc/" rel="tag">calc</a>,
+                    <a href="https://www.zhangxinxu.com/wordpress/tag/counter/" rel="tag">counter</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/css3/" rel="tag">css3</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/css/" rel="tag">css相关</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/progress/" rel="tag">progress</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/var/" rel="tag">var</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/%e5%8f%98%e9%87%8f/" rel="tag">变量</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/%e8%bf%9b%e5%ba%a6%e6%9d%a1/"
+                            rel="tag">进度条</a><br/><br/> 发布在 <a href="https://www.zhangxinxu.com/wordpress/category/css/"
+                                                               rel="category tag">CSS相关</a> | <a
+                            href="https://www.zhangxinxu.com/wordpress/2019/01/css-var-%e5%8f%98%e9%87%8f-%e5%b1%80%e9%83%a8/#comments">4
+                        条评论 &#187;</a></p>
+            </div>
+
+
+            <div class="post-8402 post type-post status-publish format-standard hentry category-js tag-javascript tag-replace tag-48 tag-1400 tag-466 tag-222"
+                 id="post-8402">
+                <h2><a href="https://www.zhangxinxu.com/wordpress/2019/01/js-quiz-27/" rel="bookmark"
+                       class="entry-title" title="粉丝群第27期JS基础小测答疑文字版的永久链接">粉丝群第27期JS基础小测答疑文字版</a></h2>
+                <small><span class="date updated" role="update">2019年01月20日</span> by <span class="author fn"
+                                                                                            role="author">张 鑫旭</span> 阅读
+                    2933 次, 今日 19 次
+                </small>
+
+                <div class="entry entry-content" role="summary">
+                    <p><img src="//image.zhangxinxu.com/image/blog/201901/quiz-thumb.jpg" width="161" height="100"
+                            alt="小测头图" lazyload="on" class="alignright size-medium"/></p>
+                    <p>讲讲JS正则表达式二三事，以及在这基础上制作的可视化工具，再讲讲不使用正则的傻白甜实现方法，并以此延伸一点关于技术人员职业发展的事情。</p>
+                    <p class="read_more"><a href="https://www.zhangxinxu.com/wordpress/2019/01/js-quiz-27/"
+                                            title="粉丝群第27期JS基础小测答疑文字版"><strong>阅读全文…</strong></a></p>
+                </div>
+
+                <p class="postmetadata">标签： <a href="https://www.zhangxinxu.com/wordpress/tag/javascript/" rel="tag">javascript</a>,
+                    <a href="https://www.zhangxinxu.com/wordpress/tag/replace/" rel="tag">replace</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/%e5%89%8d%e7%ab%af/" rel="tag">前端</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/%e5%b0%8f%e6%b5%8b/" rel="tag">小测</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/%e5%b7%a5%e5%85%b7/" rel="tag">工具</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f/"
+                            rel="tag">正则表达式</a><br/><br/> 发布在 <a
+                            href="https://www.zhangxinxu.com/wordpress/category/js/js%e5%ae%9e%e4%be%8b/"
+                            rel="category tag">JS实例</a> | <a
+                            href="https://www.zhangxinxu.com/wordpress/2019/01/js-quiz-27/#comments">10 条评论 &#187;</a>
+                </p>
+            </div>
+
+
+            <div class="post-8386 post type-post status-publish format-standard hentry category-css tag-before tag-after tag-border tag-border-radius tag-css tag-transform tag-transparent tag-1178 tag-889"
+                 id="post-8386">
+                <h2><a href="https://www.zhangxinxu.com/wordpress/2019/01/pure-css-shapes/" rel="bookmark"
+                       class="entry-title" title="常见的CSS图形绘制合集的永久链接">常见的CSS图形绘制合集</a></h2>
+                <small><span class="date updated" role="update">2019年01月14日</span> by <span class="author fn"
+                                                                                            role="author">张 鑫旭</span> 阅读
+                    4866 次, 今日 93 次
+                </small>
+
+                <div class="entry entry-content" role="summary">
+                    <p><img src="//image.zhangxinxu.com/image/blog/201901/css-shape-thumb.png" width="161" height="100"
+                            alt="CSS图形绘制头图" class="alignright size-medium"/></p>
+                    <p>展示40多个常见的纯CSS绘制图形，效果实时，含源代码，想要什么效果直接复制粘贴就好了。就算项目用不到，看看别人代码怎么写的也有助于提高CSS的基本功。</p>
+                    <p class="read_more"><a href="https://www.zhangxinxu.com/wordpress/2019/01/pure-css-shapes/"
+                                            title="常见的CSS图形绘制合集"><strong>阅读全文…</strong></a></p>
+                </div>
+
+                <p class="postmetadata">标签： <a href="https://www.zhangxinxu.com/wordpress/tag/before/"
+                                               rel="tag">:before</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/after/" rel="tag">after</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/border/" rel="tag">border</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/border-radius/" rel="tag">border-radius</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/css/" rel="tag">css相关</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/transform/" rel="tag">transform</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/transparent/" rel="tag">transparent</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/%e4%b8%89%e8%a7%92/" rel="tag">三角</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/%e5%9b%be%e5%bd%a2%e7%94%9f%e6%88%90/" rel="tag">图形生成</a><br/><br/>
+                    发布在 <a href="https://www.zhangxinxu.com/wordpress/category/css/" rel="category tag">CSS相关</a> | <a
+                            href="https://www.zhangxinxu.com/wordpress/2019/01/pure-css-shapes/#comments">18 条评论
+                        &#187;</a></p>
+            </div>
+
+
+            <div class="post-8375 post type-post status-publish format-standard hentry category-css tag-absolute tag-css-reset tag-css tag-dl tag-flex tag-float tag-grid tag-relative tag-word-break tag-29 tag-1400 tag-231"
+                 id="post-8375">
+                <h2><a href="https://www.zhangxinxu.com/wordpress/2019/01/css-quiz-1/" rel="bookmark"
+                       class="entry-title" title="粉丝群第1期CSS小测点评与答疑的永久链接">粉丝群第1期CSS小测点评与答疑</a></h2>
+                <small><span class="date updated" role="update">2019年01月12日</span> by <span class="author fn"
+                                                                                            role="author">张 鑫旭</span> 阅读
+                    3289 次, 今日 8 次
+                </small>
+
+                <div class="entry entry-content" role="summary">
+                    <p><img src="//image.zhangxinxu.com/image/blog/201901/quiz-thumb.jpg" width="161" height="100"
+                            alt="小测头图" class="alignright size-medium"/></p>
+                    <p>
+                        上周新建了一个粉丝群，周三发小测题目，每周依次是CSS、DOM和JS，周六上午答疑，答疑方式是直播加群聊。然后今天上午进行了第一次的直播答疑，是一个简单的CSS布局问题，本文可以看成是本次答疑的文档版。如果你也想要加入粉丝群，可以参见文末的信息。</p>
+                    <p class="read_more"><a href="https://www.zhangxinxu.com/wordpress/2019/01/css-quiz-1/"
+                                            title="粉丝群第1期CSS小测点评与答疑"><strong>阅读全文…</strong></a></p>
+                </div>
+
+                <p class="postmetadata">标签： <a href="https://www.zhangxinxu.com/wordpress/tag/absolute/" rel="tag">absolute</a>,
+                    <a href="https://www.zhangxinxu.com/wordpress/tag/css-reset/" rel="tag">css reset</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/css/" rel="tag">css相关</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/dl/" rel="tag">dl</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/flex/" rel="tag">flex</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/float/" rel="tag">float</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/grid/" rel="tag">grid</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/relative/" rel="tag">relative</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/word-break/" rel="tag">word-break</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/%e5%ae%bd%e5%ba%a6%e8%87%aa%e9%80%82%e5%ba%94/"
+                            rel="tag">宽度自适应</a>, <a href="https://www.zhangxinxu.com/wordpress/tag/%e5%b0%8f%e6%b5%8b/"
+                                                    rel="tag">小测</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/%e5%b8%83%e5%b1%80/"
+                            rel="tag">布局</a><br/><br/> 发布在 <a href="https://www.zhangxinxu.com/wordpress/category/css/"
+                                                              rel="category tag">CSS相关</a> | <a
+                            href="https://www.zhangxinxu.com/wordpress/2019/01/css-quiz-1/#comments">12 条评论 &#187;</a>
+                </p>
+            </div>
+
+
+            <div class="post-8360 post type-post status-publish format-standard hentry category-css tag-border tag-border-radius tag-css tag-font tag-transform tag-889 tag-216"
+                 id="post-8360">
+                <h2><a href="https://www.zhangxinxu.com/wordpress/2019/01/pure-css-26-letters/" rel="bookmark"
+                       class="entry-title" title="分享三个纯CSS实现26个英文字母的案例的永久链接">分享三个纯CSS实现26个英文字母的案例</a></h2>
+                <small><span class="date updated" role="update">2019年01月11日</span> by <span class="author fn"
+                                                                                            role="author">张 鑫旭</span> 阅读
+                    4521 次, 今日 5 次
+                </small>
+
+                <div class="entry entry-content" role="summary">
+                    <p><img src="//image.zhangxinxu.com/image/blog/201901/css-letters.png" width="161" height="71.659"
+                            class="alignright size-medium" lazyload="on"/></p>
+                    <p>本文展示三个CSS生成26个字母的案例，旨在展示CSS在图形绘制方面的潜力，同时这些案例也是非常好的CSS图形绘制学习材料。希望本文内容对您的学习有所帮助。</p>
+                    <p class="read_more"><a href="https://www.zhangxinxu.com/wordpress/2019/01/pure-css-26-letters/"
+                                            title="分享三个纯CSS实现26个英文字母的案例"><strong>阅读全文…</strong></a></p>
+                </div>
+
+                <p class="postmetadata">标签： <a href="https://www.zhangxinxu.com/wordpress/tag/border/"
+                                               rel="tag">border</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/border-radius/" rel="tag">border-radius</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/css/" rel="tag">css相关</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/font/" rel="tag">font</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/transform/" rel="tag">transform</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/%e5%9b%be%e5%bd%a2%e7%94%9f%e6%88%90/" rel="tag">图形生成</a>,
+                    <a href="https://www.zhangxinxu.com/wordpress/tag/%e5%ad%97%e7%ac%a6/" rel="tag">字符</a><br/><br/>
+                    发布在 <a href="https://www.zhangxinxu.com/wordpress/category/css/" rel="category tag">CSS相关</a> | <a
+                            href="https://www.zhangxinxu.com/wordpress/2019/01/pure-css-26-letters/#comments">13 条评论
+                        &#187;</a></p>
+            </div>
+
+
+            <div class="post-8357 post type-post status-publish format-standard hentry category-css tag-animation tag-border tag-box-shadow tag-caret-color tag-ch tag-overflow tag-steps tag-word-break tag-181 tag-216"
+                 id="post-8357">
+                <h2><a href="https://www.zhangxinxu.com/wordpress/2019/01/css-typewriter-effect/" rel="bookmark"
+                       class="entry-title" title="小tips: 纯CSS实现打字动画效果的永久链接">小tips: 纯CSS实现打字动画效果</a></h2>
+                <small><span class="date updated" role="update">2019年01月10日</span> by <span class="author fn"
+                                                                                            role="author">张 鑫旭</span> 阅读
+                    3469 次, 今日 7 次
+                </small>
+
+                <div class="entry entry-content" role="summary">
+                    <p><img src="//image.zhangxinxu.com/image/blog/201901/print-thumb.jpg" width="161" height="100"
+                            class="alignright size-medium" lazyload="on"/></p>
+                    <p>
+                        本文主要介绍如何使用CSS实现类似打印机一样的文本打字效果，展示了共两种方法，分别适用于纯中文场景，以及中英文混合场景，这种效果在线简历，或者一些运营活动上比较合适。希望本文内容可以对你的学习有所帮助。</p>
+                    <p class="read_more"><a href="https://www.zhangxinxu.com/wordpress/2019/01/css-typewriter-effect/"
+                                            title="小tips: 纯CSS实现打字动画效果"><strong>阅读全文…</strong></a></p>
+                </div>
+
+                <p class="postmetadata">标签： <a href="https://www.zhangxinxu.com/wordpress/tag/animation/" rel="tag">animation</a>,
+                    <a href="https://www.zhangxinxu.com/wordpress/tag/border/" rel="tag">border</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/box-shadow/" rel="tag">box-shadow</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/caret-color/" rel="tag">caret-color</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/ch/" rel="tag">ch</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/overflow/" rel="tag">overflow</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/steps/" rel="tag">steps</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/word-break/" rel="tag">word-break</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/%e5%8a%a8%e7%94%bb%e6%95%88%e6%9e%9c/"
+                            rel="tag">动画效果</a>, <a href="https://www.zhangxinxu.com/wordpress/tag/%e5%ad%97%e7%ac%a6/"
+                                                   rel="tag">字符</a><br/><br/> 发布在 <a
+                            href="https://www.zhangxinxu.com/wordpress/category/css/" rel="category tag">CSS相关</a> | <a
+                            href="https://www.zhangxinxu.com/wordpress/2019/01/css-typewriter-effect/#comments">9 条评论
+                        &#187;</a></p>
+            </div>
+
+
+            <div class="post-8346 post type-post status-publish format-standard hentry category-css tag-border tag-border-radius tag-box-decoration-break tag-columns tag-css3 tag-css tag-linear-gradient tag-webkit"
+                 id="post-8346">
+                <h2><a href="https://www.zhangxinxu.com/wordpress/2019/01/css-css3-box-decoration-break/" rel="bookmark"
+                       class="entry-title" title="CSS/CSS3 box-decoration-break属性简介的永久链接">CSS/CSS3
+                    box-decoration-break属性简介</a></h2>
+                <small><span class="date updated" role="update">2019年01月5日</span> by <span class="author fn"
+                                                                                           role="author">张 鑫旭</span> 阅读
+                    2521 次, 今日 4 次
+                </small>
+
+                <div class="entry entry-content" role="summary">
+                    <p><img src="//image.zhangxinxu.com/image/blog/201901/box-decoration-break.jpg" width="161"
+                            height="100" class="alignright" lazyload="on" alt="CSS box-decoration-break属性"></p>
+                    <p>CSS box-decoration-break属性可以指定元素片段在跨行、跨列或跨页（如打印）时候的样式渲染表现。</p>
+                    <p>
+                        默认情况下，元素的跨行或跨列渲染都是裁剪分割，各得一部分，借助box-decoration-break属性，可以让换行，或者换列的各部分元素按照独立的样式进行渲染，活用这种特性，可以让我们的布局和样式表现更上一层。</p>
+                    <p class="read_more"><a
+                            href="https://www.zhangxinxu.com/wordpress/2019/01/css-css3-box-decoration-break/"
+                            title="CSS/CSS3 box-decoration-break属性简介"><strong>阅读全文…</strong></a></p>
+                </div>
+
+                <p class="postmetadata">标签： <a href="https://www.zhangxinxu.com/wordpress/tag/border/"
+                                               rel="tag">border</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/border-radius/" rel="tag">border-radius</a>, <a
+                        href="https://www.zhangxinxu.com/wordpress/tag/box-decoration-break/" rel="tag">box-decoration-break</a>,
+                    <a href="https://www.zhangxinxu.com/wordpress/tag/columns/" rel="tag">columns</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/css3/" rel="tag">css3</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/css/" rel="tag">css相关</a>, <a
+                            href="https://www.zhangxinxu.com/wordpress/tag/linear-gradient/"
+                            rel="tag">linear-gradient</a>, <a href="https://www.zhangxinxu.com/wordpress/tag/webkit/"
+                                                              rel="tag">webkit</a><br/><br/> 发布在 <a
+                            href="https://www.zhangxinxu.com/wordpress/category/css/" rel="category tag">CSS相关</a> | <a
+                            href="https://www.zhangxinxu.com/wordpress/2019/01/css-css3-box-decoration-break/#comments">7
+                        条评论 &#187;</a></p>
+            </div>
+
+
+            <div class="navigation_bot">
+                <!--
+                    <div class="alignleft">?php next_posts_link(__('&laquo; Older Entries', 'kubrick')) ?</div>
+                    <div class="alignright">?php previous_posts_link(__('Newer Entries &raquo;', 'kubrick')) ?</div>
+                -->
+                <div class='wp-pagenavi'>
+                    <span class='pages'> 第1到63页</span><span class='current'>1</span><a
+                        href='https://www.zhangxinxu.com/wordpress/page/2/' class='page'>2</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/3/' class='page'>3</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/4/' class='page'>4</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/5/' class='page'>5</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/6/' class='page'>6</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/7/' class='page'>7</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/8/' class='page'>8</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/9/' class='page'>9</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/10/' class='page'>10</a><a
+                        href="https://www.zhangxinxu.com/wordpress/page/2/" class="nextpostslink"> 下一页 </a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/20/' class='larger page'>20</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/30/' class='larger page'>30</a><a
+                        href='https://www.zhangxinxu.com/wordpress/page/40/' class='larger page'>40</a><span
+                        class='extend'>...</span><a href='https://www.zhangxinxu.com/wordpress/page/63/' class='last'>最后一页
+                    »</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="sidebar" role="complementary">
+        <div id="zxx_intro" class="sldebar_out">
+            <div class="silebar_inner" itemscope itemtype="http://data-vocabulary.org/Person">
+                <img src="//image.zhangxinxu.com/image/blog/zxx_240_0818.jpg" itemprop="photo" class="zxx_head_image">
+                <div class="zxx_some_info">
+                    <p class="mb5"><span itemprop="name" class="fn">张鑫旭</span><sup><a itemprop="url"
+                                                                                      href="/life/about/">more</a></sup>，09年<a
+                            href="http://www.hust.edu.cn/" target="_blank">华中科技大学</a>毕业，现<span
+                            itemprop="location">上海</span>，就职于<a href="//www.yuewen.com/" itemprop="organization"
+                                                                target="_blank">阅文集团</a>，专注<span
+                            itemprop="role">web前端</span>偏前领域，钓鱼爱好者，著有<a href="https://www.cssworld.cn/" itemprop="work"
+                                                                        target="_blank">《CSS世界》</a>。</p>
+                    <p>邮箱：<span style="font-family:arial;">zhangxinxu@zhangxinxu.com</span></p>
+                    <p>关注我：<a href="https://www.zhangxinxu.com/sp/wechat.html" target="_blank">微信和公众号</a>&emsp;<a
+                            href="//weibo.com/zhangxinxu" target="_blank" rel="nofollow">微博</a>&emsp;<a
+                            href="//juejin.im/user/595315e7f265da6c322dc6c6" target="_blank" rel="nofollow">掘金</a>&emsp;<a
+                            href="//www.zhihu.com/people/iamzhangxinxu/activities" target="_blank" rel="nofollow">知乎</a>
+                    </p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div id="topRecomm" class="sldebar_out top_da_out" style="display:none;">
+            <a href="javascript:" id="slideA" class="slide_a">了解一下 ×</a>
+            <div class="top_da" style="display:block!important;">
+                <div id="daSlideX" class="da_slide_x" style="display:block!important;" title="并关闭推荐">
+                    <div class="da_inner">
+                        <a href="http://www.zhufengpeixun.cn/main/course/index.html?ref=zhangxinxu" target="_blank"
+                           onClick="_gaq.push(['_trackEvent', 'ZHUFENG', 'click', 'Top Ad']);"
+                           style="height:300px;background-image:url(//wx1.sinaimg.cn/large/4b4d632fgy1fv4yf4vxfyj209c08c40h.jpg);"
+                           rel="nofollow"></a>
+                    </div>
+                    <div class="da_inner"><a href="https://ke.qq.com/next/index.html?from=800000730" target="_blank"
+                                             onClick="_gaq.push(['_trackEvent', 'IMWeb', 'click', 'Top Ad']);"
+                                             style="height:300px;background-image:url(//wx1.sinaimg.cn/large/4b4d632fgy1fupty97bhtj20io0got8y.jpg);"
+                                             rel="nofollow"></a>
+                    </div>
+                </div>
+                <!-- 索引 -->
+                <div id="daIndexX" class="da_index_x">
+                    <a href="javascript:" class="da_index_a active">1</a>
+                    <a href="javascript:" class="da_index_a">2</a>
+                    <!-- <a href="javascript:" class="da_index_a">3</a> -->
+                </div>
+            </div>
+        </div>
+        <script>if (window.location != window.parent.location) {
+            window.parent.location = window.location;
+        }
+        if (localStorage.adCloseTimeNew2 && new Date() * 1 - localStorage.adCloseTimeNew2 * 1 < 1000 * 60 * 60 * 24 * 7) {
+            topRecomm.style.display = 'none';
+        } else {
+            topRecomm.style.display = 'block';
+        }</script>
+        <div class="sldebar_out">
+            <div class="silebar_inner slide_list">
+                <ul>
+                    <li id="categories-4" class="widget widget_categories"><h2 class="widgettitle">文章分类</h2>
+                        <ul>
+                            <li class="cat-item cat-item-3"><a
+                                    href="https://www.zhangxinxu.com/wordpress/category/css/">CSS相关</a> (288)
+                            </li>
+                            <li class="cat-item cat-item-6"><a href="https://www.zhangxinxu.com/wordpress/category/ps/">Design相关</a>
+                                (13)
+                            </li>
+                            <li class="cat-item cat-item-4"><a
+                                    href="https://www.zhangxinxu.com/wordpress/category/graphic/">Graphic相关</a> (61)
+                                <ul class='children'>
+                                    <li class="cat-item cat-item-896"><a
+                                            href="https://www.zhangxinxu.com/wordpress/category/graphic/canvas-graphic/">Canvas相关</a>
+                                        (28)
+                                    </li>
+                                    <li class="cat-item cat-item-895"><a
+                                            href="https://www.zhangxinxu.com/wordpress/category/graphic/svg-graphic/">SVG相关</a>
+                                        (33)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="cat-item cat-item-1097"><a
+                                    href="https://www.zhangxinxu.com/wordpress/category/html/">HTML相关</a> (32)
+                            </li>
+                            <li class="cat-item cat-item-5"><a href="https://www.zhangxinxu.com/wordpress/category/js/">JS相关</a>
+                                (172)
+                                <ul class='children'>
+                                    <li class="cat-item cat-item-60"><a
+                                            href="https://www.zhangxinxu.com/wordpress/category/js/jquery-about/">jQuery相关</a>
+                                        (46)
+                                    </li>
+                                    <li class="cat-item cat-item-1284"><a
+                                            href="https://www.zhangxinxu.com/wordpress/category/js/js-api/">JS API</a>
+                                        (18)
+                                    </li>
+                                    <li class="cat-item cat-item-180"><a
+                                            href="https://www.zhangxinxu.com/wordpress/category/js/js%e5%ae%9e%e4%be%8b/">JS实例</a>
+                                        (86)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="cat-item cat-item-648"><a
+                                    href="https://www.zhangxinxu.com/wordpress/category/mobile/">Mobile相关</a> (14)
+                            </li>
+                            <li class="cat-item cat-item-7"><a
+                                    href="https://www.zhangxinxu.com/wordpress/category/web/">Web综合</a> (45)
+                            </li>
+                            <li class="cat-item cat-item-198"><a
+                                    href="https://www.zhangxinxu.com/wordpress/category/%e5%a4%96%e6%96%87%e7%bf%bb%e8%af%91/">外文翻译</a>
+                                (36)
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="archives-3" class="widget widget_archive"><h2 class="widgettitle">文章存档</h2>
+                        <ul>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2019/02/'>2019年二月</a>&nbsp;(1)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2019/01/'>2019年一月</a>&nbsp;(9)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2018/12/'>2018年十二月</a>&nbsp;(11)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2018/11/'>2018年十一月</a>&nbsp;(8)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2018/10/'>2018年十月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2018/09/'>2018年九月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2018/08/'>2018年八月</a>&nbsp;(6)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2018/07/'>2018年七月</a>&nbsp;(10)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2018/06/'>2018年六月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2018/05/'>2018年五月</a>&nbsp;(9)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2018/04/'>2018年四月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2018/03/'>2018年三月</a>&nbsp;(9)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2018/02/'>2018年二月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2018/01/'>2018年一月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2017/12/'>2017年十二月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2017/11/'>2017年十一月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2017/10/'>2017年十月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2017/09/'>2017年九月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2017/08/'>2017年八月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2017/07/'>2017年七月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2017/06/'>2017年六月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2017/05/'>2017年五月</a>&nbsp;(6)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2017/04/'>2017年四月</a>&nbsp;(1)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2017/03/'>2017年三月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2017/02/'>2017年二月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2017/01/'>2017年一月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2016/12/'>2016年十二月</a>&nbsp;(2)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2016/11/'>2016年十一月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2016/10/'>2016年十月</a>&nbsp;(2)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2016/09/'>2016年九月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2016/08/'>2016年八月</a>&nbsp;(6)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2016/07/'>2016年七月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2016/06/'>2016年六月</a>&nbsp;(6)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2016/05/'>2016年五月</a>&nbsp;(2)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2016/04/'>2016年四月</a>&nbsp;(2)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2016/03/'>2016年三月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2016/02/'>2016年二月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2016/01/'>2016年一月</a>&nbsp;(6)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2015/12/'>2015年十二月</a>&nbsp;(2)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2015/11/'>2015年十一月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2015/10/'>2015年十月</a>&nbsp;(1)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2015/08/'>2015年八月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2015/07/'>2015年七月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2015/06/'>2015年六月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2015/05/'>2015年五月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2015/04/'>2015年四月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2015/03/'>2015年三月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2015/02/'>2015年二月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2015/01/'>2015年一月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2014/12/'>2014年十二月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2014/11/'>2014年十一月</a>&nbsp;(1)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2014/10/'>2014年十月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2014/09/'>2014年九月</a>&nbsp;(1)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2014/08/'>2014年八月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2014/07/'>2014年七月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2014/06/'>2014年六月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2014/05/'>2014年五月</a>&nbsp;(1)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2014/04/'>2014年四月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2014/03/'>2014年三月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2014/02/'>2014年二月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2014/01/'>2014年一月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2013/12/'>2013年十二月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2013/11/'>2013年十一月</a>&nbsp;(6)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2013/10/'>2013年十月</a>&nbsp;(1)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2013/09/'>2013年九月</a>&nbsp;(6)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2013/08/'>2013年八月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2013/07/'>2013年七月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2013/06/'>2013年六月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2013/05/'>2013年五月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2013/04/'>2013年四月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2013/03/'>2013年三月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2013/02/'>2013年二月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2013/01/'>2013年一月</a>&nbsp;(10)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2012/12/'>2012年十二月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2012/11/'>2012年十一月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2012/10/'>2012年十月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2012/09/'>2012年九月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2012/08/'>2012年八月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2012/07/'>2012年七月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2012/06/'>2012年六月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2012/05/'>2012年五月</a>&nbsp;(6)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2012/04/'>2012年四月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2012/03/'>2012年三月</a>&nbsp;(9)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2012/02/'>2012年二月</a>&nbsp;(6)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2012/01/'>2012年一月</a>&nbsp;(4)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2011/12/'>2011年十二月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2011/11/'>2011年十一月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2011/10/'>2011年十月</a>&nbsp;(3)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2011/09/'>2011年九月</a>&nbsp;(9)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2011/08/'>2011年八月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2011/07/'>2011年七月</a>&nbsp;(6)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2011/06/'>2011年六月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2011/05/'>2011年五月</a>&nbsp;(8)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2011/04/'>2011年四月</a>&nbsp;(8)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2011/03/'>2011年三月</a>&nbsp;(6)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2011/02/'>2011年二月</a>&nbsp;(6)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2011/01/'>2011年一月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2010/12/'>2010年十二月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2010/11/'>2010年十一月</a>&nbsp;(8)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2010/10/'>2010年十月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2010/09/'>2010年九月</a>&nbsp;(10)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2010/08/'>2010年八月</a>&nbsp;(10)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2010/07/'>2010年七月</a>&nbsp;(10)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2010/06/'>2010年六月</a>&nbsp;(8)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2010/05/'>2010年五月</a>&nbsp;(11)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2010/04/'>2010年四月</a>&nbsp;(14)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2010/03/'>2010年三月</a>&nbsp;(11)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2010/02/'>2010年二月</a>&nbsp;(1)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2010/01/'>2010年一月</a>&nbsp;(15)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2009/12/'>2009年十二月</a>&nbsp;(13)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2009/11/'>2009年十一月</a>&nbsp;(7)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2009/10/'>2009年十月</a>&nbsp;(6)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2009/09/'>2009年九月</a>&nbsp;(5)</li>
+                            <li><a href='https://www.zhangxinxu.com/wordpress/2009/08/'>2009年八月</a>&nbsp;(12)</li>
+                        </ul>
+                    </li>
+                    <li id="recent-posts-3" class="widget widget_recent_entries"><h2 class="widgettitle">最新文章</h2>
+                        <ul>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2019/02/css-css3-shapes/">写给自己看的CSS
+                                    shapes布局教程</a>
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2019/01/css-css3-columns-layout/">写给自己看的CSS
+                                    columns分栏布局教程</a>
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2019/01/dom-quiz-27-window-scroll/">DOM基础小测27期答疑文字版-窗体滚动二三事</a>
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2019/01/css-var-%e5%8f%98%e9%87%8f-%e5%b1%80%e9%83%a8/">CSS
+                                    var变量的局部作用域（继承）特性</a>
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2019/01/js-quiz-27/">粉丝群第27期JS基础小测答疑文字版</a>
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2019/01/pure-css-shapes/">常见的CSS图形绘制合集</a>
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2019/01/css-quiz-1/">粉丝群第1期CSS小测点评与答疑</a>
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2019/01/pure-css-26-letters/">分享三个纯CSS实现26个英文字母的案例</a>
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2019/01/css-typewriter-effect/">小tips:
+                                    纯CSS实现打字动画效果</a>
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2019/01/css-css3-box-decoration-break/">CSS/CSS3
+                                    box-decoration-break属性简介</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="daily-top-10-posts" class="widget widget_dailytopten"><h2 class="widgettitle">今日热门</h2>
+                        <ul>
+                            <li><a href="https://www.zhangxinxu.com/wordpress/2019/01/pure-css-shapes/">常见的CSS图形绘制合集</a>
+                                (93)
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2009/09/%e5%85%b3%e4%ba%8e%e6%96%87%e5%ad%97%e5%86%85%e5%ae%b9%e6%ba%a2%e5%87%ba%e7%94%a8%e7%82%b9%e7%82%b9%e7%82%b9-%e7%9c%81%e7%95%a5%e5%8f%b7%e8%a1%a8%e7%a4%ba/">关于文字内容溢出用点点点(...)省略号表示</a>
+                                (69)
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2010/01/jquery-pagination-ajax%e5%88%86%e9%a1%b5%e6%8f%92%e4%bb%b6%e4%b8%ad%e6%96%87%e8%af%a6%e8%a7%a3/">jQuery
+                                    Pagination Ajax分页插件中文详解</a> (61)
+                            </li>
+                            <li><a href="https://www.zhangxinxu.com/wordpress/2019/02/css-css3-shapes/">写给自己看的CSS
+                                shapes布局教程</a> (61)
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2013/04/qunit-javascript-unit-test-%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95/">边译边学-QUnit下的JavaScript自动化单元测试</a>
+                                (60)
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2010/10/%e7%bf%bb%e8%af%91-%e9%ab%98%e8%b4%a8%e9%87%8fjavascript%e4%bb%a3%e7%a0%81%e4%b9%a6%e5%86%99%e5%9f%ba%e6%9c%ac%e8%a6%81%e7%82%b9/">翻译-高质量JavaScript代码书写基本要点</a>
+                                (54)
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2011/04/js-range-html%e6%96%87%e6%a1%a3%e6%96%87%e5%ad%97%e5%86%85%e5%ae%b9%e9%80%89%e4%b8%ad%e3%80%81%e5%ba%93%e5%8f%8a%e5%ba%94%e7%94%a8%e4%bb%8b%e7%bb%8d/">JS
+                                    Range HTML文档/文字内容选中、库及应用介绍</a> (54)
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2010/03/every-browser-support-html5-video/">让所有浏览器支持HTML5
+                                    video视频标签</a> (49)
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2010/11/%e6%8b%9c%e6%8b%9c%e4%ba%86%e6%b5%ae%e5%8a%a8%e5%b8%83%e5%b1%80-%e5%9f%ba%e4%ba%8edisplayinline-block%e7%9a%84%e5%88%97%e8%a1%a8%e5%b8%83%e5%b1%80/">拜拜了,浮动布局-基于display:inline-block的列表布局</a>
+                                (49)
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2013/09/css3-animation-requestanimationframe-tween-%e5%8a%a8%e7%94%bb%e7%ae%97%e6%b3%95/">CSS3动画那么强，requestAnimationFrame还有毛线用？</a>
+                                (45)
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="custom_html-2" class="widget_text widget widget_custom_html">
+                        <div class="textwidget custom-html-widget">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <!-- 336x280 -->
+                            <ins class="adsbygoogle"
+                                 style="display:inline-block;width:336px;height:280px"
+                                 data-ad-client="ca-pub-0090627341039040"
+                                 data-ad-slot="7307897248"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                    </li>
+                    <li id="most_commented_widget-4" class="widget widget_most_commented_widget"><h2
+                            class="widgettitle">今年热议</h2>
+                        <ul>
+                            <li><a href="https://www.zhangxinxu.com/wordpress/2018/06/lovers-marriage/"
+                                   title="《CSS世界》女主角诚寻靠谱一起奋斗之人">《CSS世界》女主角诚寻靠谱一起奋斗之人</a> (76)
+                            </li>
+                            <li><a href="https://www.zhangxinxu.com/wordpress/2018/05/js-dom-transform-line-chart/"
+                                   title="不借助Echarts等图形框架原生JS快速实现折线图效果">不借助Echarts等图形框架原生JS快速实现折线图效果</a> (64)
+                            </li>
+                            <li><a href="https://www.zhangxinxu.com/wordpress/2018/08/for-in-es6-for-of/"
+                                   title="看，for..in和for..of在那里吵架！">看，for..in和for..of在那里吵架！</a> (61)
+                            </li>
+                            <li><a href="https://www.zhangxinxu.com/wordpress/2018/06/lulu-ui/"
+                                   title="是时候好好安利下LuLu UI框架了！">是时候好好安利下LuLu UI框架了！</a> (48)
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2018/08/js-base64-atob-btoa-encode-decode/"
+                                   title="原来浏览器原生支持JS Base64编码解码">原来浏览器原生支持JS Base64编码解码</a> (36)
+                            </li>
+                            <li><a href="https://www.zhangxinxu.com/wordpress/2018/08/css-gradient-dashed-border/"
+                                   title="妙法攻略：渐变虚框及边框滚动动画的纯CSS实现">妙法攻略：渐变虚框及边框滚动动画的纯CSS实现</a> (33)
+                            </li>
+                            <li><a href="https://www.zhangxinxu.com/wordpress/2018/05/image-sequence-html5-video-play/"
+                                   title="炫酷H5中序列图片视频化播放的高性能实现">炫酷H5中序列图片视频化播放的高性能实现</a> (31)
+                            </li>
+                            <li>
+                                <a href="https://www.zhangxinxu.com/wordpress/2018/10/scroll-behavior-scrollintoview-%e5%b9%b3%e6%bb%91%e6%bb%9a%e5%8a%a8/"
+                                   title="CSS scroll-behavior和JS scrollIntoView让页面滚动平滑">CSS scroll-behavior和JS
+                                    scrollIntoView让页面滚动平滑</a> (31)
+                            </li>
+                            <li><a href="https://www.zhangxinxu.com/wordpress/2018/05/windows-bat-delete-os-x-ds_store/"
+                                   title="windows系统下批量删除OS X系统.DS_Store文件">windows系统下批量删除OS X系统.DS_Store文件</a> (26)
+                            </li>
+                            <li><a href="https://www.zhangxinxu.com/wordpress/2018/10/display-flex-css3-css/"
+                                   title="写给自己看的display: flex布局教程">写给自己看的display: flex布局教程</a> (26)
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="hm_t_123227" style="margin-top:20px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript'
+        src='https://www.zhangxinxu.com/wordpress/wp-includes/js/wp-embed.min.js?ver=4.9.4'></script>
+
+<div id="footbar" role="toolbar">
+    <script src="//cdn.zhangxinxu.com/wordpress/wp-content/themes/default/svgsprites.js"></script>
+    <div class="foot_yy_x hidden" id="footYyX">
+        <div class="foot_yy_title">
+            <span class="l">我的应用</span>
+            <a href="javascript:" class="r" id="footYYClose">-</a>
+        </div>
+        <div class="ml10 mr10 foot_yy_dv">工具与应用</div>
+        <div class="mt5">
+            <a class="foot_yy_a" href="/sp/svgo/">SVG在线压缩合并工具</a>
+            <a class="foot_yy_a" href="/sp/base64.html">图片转base64(拖进来)</a>
+            <a class="foot_yy_a" href="/sp/qrcode.html">在线二维码生成</a>
+            <a class="foot_yy_a" href="/sp/char.html">任意字符转HTML编码</a>
+            <a class="foot_yy_a" href="/sp/gif/">GIF在线生成工具</a>
+            <a class="foot_yy_a" href="/sp/filter/">电影级别照片调色工具</a>
+        </div>
+        <div class="ml10 mr10 foot_yy_dv">在线资源</div>
+        <div class="mt5">
+            <a class="foot_yy_a" href="/jq/api14/">jQuery 1.4 API中文版</a>
+            <a class="foot_yy_a" href="/GitHub/demo-Snap.svg/demo/basic/">Snap.svg中文文档</a>
+            <a class="foot_yy_a" href="/jq/stylus/">stylus中文版参考文档</a>
+            <a class="foot_yy_a" href="/css3/">CSS3中文共享参考指南</a>
+            <a class="foot_yy_a" href="/sp/character.html">非主流字符及字符图案</a>
+        </div>
+        <div>&nbsp;</div>
+        <a href="javascript:" class="foot_yy foot_yy_on nowrap" id="footYYOff"><img
+                src="//cdn.zhangxinxu.com/zxx_ico.png" class="vimg"> 我的应用</a>
+    </div>
+    <a href="javascript:" class="foot_yy nowrap" id="footYYShow"><img src="//cdn.zhangxinxu.com/zxx_ico.png"
+                                                                      class="vimg"/> 我的应用</a>
+    <span class="foot_rss l">
+        <a class="foot_rss_a" href="/wordpress/feed/"><svg class="icon-svg"><use xlink:href="#icon-rss"></use></svg>文章RSS订阅</a>
+            </span>
+    <a href="#" id="backToTop" class="foot_top">
+        <svg class="icon-svg">
+            <use xlink:href="#back-top"></use>
+        </svg>
+        返回顶部</a>
+    <i style="float: right;border-right: 1px solid #ADB2B9; height:32px;"></i>
+    <a href="/wordpress/wp-login.php" class="foot_login"><i class="icon-male"></i>登录</a>
+</div>
+<script src="/wordpress/wp-content/themes/default/script-min.js?v=190120"></script>
+
+<div id="footer" class="foot_bg footer" role="contentinfo">
+    <p class="foot_p footer-p">
+        Designed &amp; Powerd by <a href="/">zhangxinxu</a>
+        <br/>
+        Copyright© 2009-2019 张鑫旭-鑫空间-鑫生活
+        <br/><a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">鄂ICP备09015569号</a>
+    </p>
+</div>
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-11205167-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?48d8e938d5365a4cb0fc9e65d945018e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+</body>
+</html>
