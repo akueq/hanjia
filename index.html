@@ -1,0 +1,88 @@
+<!-- index.html -->
+<!--搜索js可得需改动部位-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AKUWQ的个人主页</title>
+    <link rel="stylesheet" href="../app/css/index.css">
+</head>
+<body>
+<div id='page'>
+    <div id="header"><!--上栏-->
+        <div id="headerimg">
+            <a href="#" class="page_logo">
+                <img src="../app/img/长条.png" height="144" width="1660"/>
+            </a>
+        </div>
+        <div id="daohanglan">
+            <ul class="menu_tab">
+                <li class="on">
+                    <a href="#">博客首页</a>
+                </li>
+                <li>
+                    <a href="#">全部文章</a>
+                </li>
+                <li>
+                    <a href="#">文章标签</a>
+                </li>
+                <li>
+                    <a href="#">文章分类</a>
+                </li>
+            </ul>
+            <form method="get" id="searchform" action="#">
+                <div>
+                    <input type="search" placeholder="占位" name="s" id="s">
+                    <input type="submit" id="searchsubmit" data-value="Search" value="搜索">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="the_main"><!--中间的文章以及摘要部分-->
+        <div id="content" class="narrowcolumn">
+            <!--::before-->
+            <!--清除浮动-->
+
+            <!--这里有一个去除右栏的按钮暂时不写js-->
+            <div class="navigation_top">
+                <div class="wp-pagenavi">
+                    <!--后面需要js生成-->
+                    <!--这里写出来只为看css效果-->
+                    <span class="pages">
+                        第1到2页
+                    </span>
+                    <span class="current">
+                        1
+                    </span>
+                    <a href="#" class="page">2</a>
+                    <a href="#" class="nextpostslink">&nbsq;下一页&nbsq;</a>
+                    <span class="extend">...</span>
+                    <a href="#" class="last">最后一页>></a>
+
+                </div>
+
+            </div>
+            <div class="post">
+                <h2>
+                    <a href="#" class="entry-title">
+                        博客blog博客blog博客BLOG博客blog
+                    </a>
+                </h2>
+                <small>
+                    <!--这里加一个small然后插入一些时间呀访问次数呀得东西-->
+                    <span class="date updated">2019年1月1日</span>
+                    "阅读 0 次，今日 0 次"
+                </small>
+                <div class="entry entry-content">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="foot"><!--页脚栏-->
+    </div>
+</div>
+<script src="bundle.js"></script>
+</body>
+</html>
